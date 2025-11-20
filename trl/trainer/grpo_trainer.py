@@ -1763,7 +1763,7 @@ class GRPOTrainer(BaseTrainer):
             inputs.get("pixel_attention_mask"),
             inputs.get("image_sizes"),
         )
-
+        print("input_ids.shape:", input_ids.shape)
         print("last_hidden_state.shape:", last_hidden_state.shape)
         print("completion_ids.shape:", completion_ids.shape)
         print("completion_mask.shape:", completion_mask.shape)
