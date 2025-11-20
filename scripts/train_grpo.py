@@ -7,6 +7,8 @@ dataset = load_dataset("trl-lib/DeepMath-103K", split="train")
 
 args = GRPOConfig("Qwen/Qwen2-0.5B-Instruct-GRPO")
 args.use_liger_kernel = True
+args.loss_type = "grpo"
+
 trainer = GRPOTrainer(
     model="Qwen/Qwen2-0.5B-Instruct",
     reward_funcs=accuracy_reward,

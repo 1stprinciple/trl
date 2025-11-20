@@ -1764,6 +1764,12 @@ class GRPOTrainer(BaseTrainer):
             inputs.get("image_sizes"),
         )
 
+        print("last_hidden_state.shape:", last_hidden_state.shape)
+        print("completion_ids.shape:", completion_ids.shape)
+        print("completion_mask.shape:", completion_mask.shape)
+        print("advantages.shape:", inputs["advantages"].shape)
+        print("old_per_token_logps.shape: ", inputs.get("old_per_token_logps").shape)
+        print("ref_per_token_logps.shape: ", inputs.get("ref_per_token_logps").shape)
         # compute loss and metrics using liger grpo loss
         loss, metrics = self.liger_grpo_loss(
             _input=last_hidden_state,
