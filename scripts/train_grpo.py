@@ -8,7 +8,7 @@ dataset = load_dataset("trl-lib/DeepMath-103K", split="train")
 args = GRPOConfig("Qwen/Qwen2-0.5B-Instruct-GRPO")
 args.use_liger_kernel = True
 args.loss_type = "grpo"
-args.max_completion_length = 16384
+args.max_completion_length = 4096
 
 trainer = GRPOTrainer(
     model="Qwen/Qwen2-0.5B-Instruct",
